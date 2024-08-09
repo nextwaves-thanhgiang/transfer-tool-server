@@ -53,7 +53,9 @@ class userController {
 
     try {
       // Kiểm tra xem người dùng có tồn tại không
-      const user = await userModal.findOne({ email });
+      const user = await userModal.findOne({
+        $or: [{ email: email }, { username: email }],
+      });
       if (!user) {
         return res
           .status(400)

@@ -6,6 +6,8 @@ const Transfer = require("../App/controllers/Transfer");
 
 router.post("/create", Transfer.createTransferSlip);
 router.get("/transfer-details/:id", Transfer.getDataById);
+router.get("/get-all-transfer", Transfer.getAllTransferSlip);
+router.post("/update-status", Transfer.updateStatusTransfer);
 // router.post("/login", User.login);
 // router.get("/verify-token", verifyToken, (req, res) => {
 //   res.status(200).json({ message: "Token is valid.", user: req.user });
